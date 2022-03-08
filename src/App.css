@@ -1,3 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  background-color: rgb(236, 236, 236);
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 30px 10%;
+  background-color: rgb(199, 63, 63);
+}
+
+h1 {
+  color: white;
+}
+
+h1:hover {
+  color: rgb(212, 212, 212);
+}
+
+.navLinks {
+  color: white;
+  list-style: none;
+  display: inline-block;
+  padding: 0px 20px;
+  font-size: small;
+  text-align: left;
+}
+
+.navLinks:hover {
+  color: rgb(212, 212, 212);
+}
+
+.navBar {
+  background-color: rgb(133, 45, 45);
+}
+
+.homepage-header {
+  font-size: xx-large;
+  margin-top: 10px;
+}
+
+.articles-header {
+  font-size: xx-large;
+  margin-top: 10px;
+}
+
+.column {
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.row {
+  margin: 0 -5px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.articleCard {
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 16;
+}
+
+.articleTitle {
+  color: black;
+}
+
+.commentCount {
+  color: rgb(199, 63, 63);
+  font-weight: bolder;
+}
+
+.voteCount {
+  color: rgb(199, 63, 63);
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
