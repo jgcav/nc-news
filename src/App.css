@@ -52,6 +52,16 @@ h1:hover {
   margin-top: 10px;
 }
 
+.topics-header {
+  font-size: xx-large;
+  margin-top: 10px;
+}
+
+.topics-page-header {
+  font-size: x-large;
+  margin-top: 10px;
+}
+
 .column {
   float: left;
   width: 100%;
@@ -75,8 +85,24 @@ h1:hover {
   padding: 16;
 }
 
+.topicCard {
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 16;
+}
+
+.topicCard:hover {
+  background-color: rgb(212, 212, 212);
+}
+
 .articleTitle {
   color: black;
+}
+
+.topicName {
+  color: black;
+  font-size: large;
 }
 
 .commentCount {
@@ -87,6 +113,16 @@ h1:hover {
 .voteCount {
   color: rgb(199, 63, 63);
   font-weight: bolder;
+}
+
+img {
+  width: 400px;
+  height: 250px;
+  display: inline-block;
+}
+
+img:hover {
+  box-shadow: 0, 20px, 8px, 0;
 }
 
 @media screen and (max-width: 600px) {
