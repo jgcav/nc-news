@@ -7,7 +7,7 @@ export default function ArticleCard({article}) {
         <div className="column">
             <br />
         <div className="articleCard">
-            <Link className="articleTitle" to={`/articles/${article.article_id}`}><h4>{article.title}</h4></Link>
+            <Link className="articleTitle" to={`/article/${article.article_id}`}><h4>{article.title}</h4></Link>
             <dl>
             <dt>{article.topic}</dt>
             <dt>Written By: {article.author}</dt>
