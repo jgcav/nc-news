@@ -21,3 +21,17 @@ export const fetchArticlesByTopic = (topic) => {
       return res.data
     });
 };
+
+export const fetchArticlesById = (article_id) => {
+  const url = `https://jc-news.herokuapp.com/api/articles/${article_id}`;
+    return axios.get(`${url}`).then((res) => {
+      return res.data.article
+    });
+};
+
+export const fetchArticleComments = (article_id) => {
+  const url = `https://jc-news.herokuapp.com/api/articles/${article_id}/comments`;
+    return axios.get(`${url}`).then((res) => {
+      return res.data.comments
+    });
+};

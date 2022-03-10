@@ -100,12 +100,51 @@ h1:hover {
   color: black;
 }
 
+.article {
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 16;
+}
+
+.commentButton {
+  background: rgb(199, 63, 63);
+  color: white;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.commentButton:hover {
+  background: rgb(133, 45, 45);
+}
+
+.commentCard {
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 25;
+}
+
+.commentField {
+  width: 80%;
+  height: 150px;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #dddd;
+}
+
 .topicName {
   color: black;
   font-size: large;
 }
 
 .commentCount {
+  color: rgb(199, 63, 63);
+  font-weight: bolder;
+}
+
+.commentAuthor {
   color: rgb(199, 63, 63);
   font-weight: bolder;
 }
