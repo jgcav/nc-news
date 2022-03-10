@@ -1,7 +1,7 @@
 import {React, useEffect, useState} from 'react'
 import { fetchArticlesByTopic } from '../api'
 import ArticleCard from './ArticleCard'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 
 export default function TopicPage() {
     const { topic } = useParams()
