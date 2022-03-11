@@ -19,10 +19,12 @@ export default function TopicPage() {
         })
     }, [topic])
 
+    const formattedTopic = topic.slice(0, 1).toUpperCase() + topic.slice(1)
+
     return (
         <div>
             <div>
-            <h3 className="topics-page-header">{topic.toUpperCase()} NEWS</h3>
+            <h3 className="topics-page-header">{formattedTopic} News</h3>
             {isLoading ? (<p>Loading...</p>) : (
                 <div className="articles">
                     {articles.map((article) => {
