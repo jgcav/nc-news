@@ -124,12 +124,39 @@ h1:hover {
   margin-right: 10px;
 }
 
+.submitButton {
+  background: rgb(236, 236, 236);
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.cancelButton {
+  background: rgb(236, 236, 236);
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
 .commentButton:hover {
   background: rgb(133, 45, 45);
 }
 
 .voteButtons:hover {
   background: rgb(212, 212, 212);
+}
+
+.submitButton:hover {
+  background: rgb(212, 212, 212);
+}
+
+.cancelButton:hover {
+  background: rgb(199, 63, 63);
+  color: white;
 }
 
 .commentCard {
@@ -167,7 +194,7 @@ h1:hover {
   font-weight: bolder;
 }
 
-.voteErrorMessage {
+.errorMessage {
   color: rgb(199, 63, 63);
   font-weight: bolder;
 }
