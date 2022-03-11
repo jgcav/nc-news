@@ -35,3 +35,8 @@ export const fetchArticleComments = (article_id) => {
       return res.data.comments
     });
 };
+
+export const amendVotes = (article_id, vote) => {
+  const url = `https://jc-news.herokuapp.com/api/articles/${article_id}`;
+    return axios.patch(`${url}`, {inc_votes: vote})
+};
