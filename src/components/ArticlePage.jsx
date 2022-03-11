@@ -2,6 +2,7 @@ import {React, useState, useEffect} from 'react'
 import { fetchArticlesById, fetchArticleComments } from '../api'
 import { useParams } from 'react-router-dom'
 import CommentCard from './CommentCard'
+import ArticleVotes from './ArticleVotes'
 
 export default function ArticlePage() {
 
@@ -31,7 +32,8 @@ export default function ArticlePage() {
         setDisplayForm(!displayForm)
     }
 
-    console.log(displayForm)
+    const voteCount = article.votes
+    const commentCount = article.comment_count
 
     return (
         <div>
@@ -42,10 +44,13 @@ export default function ArticlePage() {
                 <br />
             <h2>{article.title}</h2>
             <br />
-            <p>{article.body}</p>
+            <p className="articleText">{article.body}</p>
+            <br />
+            <br />
+            <ArticleVotes article_id={article_id} voteCount={voteCount} commentCount={commentCount}/>
             <br />
             </div>
-            <div className="comments">
+            <ol className="comments">
                 <br />
                 <h3>Comments</h3>
                 <br />
@@ -56,7 +61,7 @@ export default function ArticlePage() {
                 {comments.map((comment) => {
                     return <CommentCard key={comment.comment_id} {...comment} comments={comments} article_id={article_id}/>
                 })}
-            </div>
+            </ol>
             </div>
         )}
     </div>
