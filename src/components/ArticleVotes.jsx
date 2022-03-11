@@ -24,7 +24,7 @@ export default function ArticleVotes({article_id, voteCount, commentCount}) {
         <div>
             <p>Votes: <span className="voteCount">{voteCount + votes}</span> Comments: <span className="commentCount">{commentCount}</span></p>
             <br />
-            {isError ? (<p className="voteErrorMessage">Unable to submit vote. Please try again.</p>) : null}
+            {isError ? (<p className="errorMessage">Unable to submit vote. Please try again.</p>) : null}
             <br />
             <button className="voteButtons" disabled={votes > 0} onClick={() => handleVote(1)}>Upvote</button>
             <button className="voteButtons" disabled={votes < 0} onClick={() => handleVote(-1)}>Downvote</button>
