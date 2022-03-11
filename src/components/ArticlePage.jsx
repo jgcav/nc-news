@@ -44,11 +44,12 @@ export default function ArticlePage() {
 
         setComment('')
 
-        setComments((currentComments) => {
-            return [newComment, ...currentComments]
-        })
 
-        addComment(article_id, newComment).catch((err) => {
+        addComment(article_id, newComment).then((returnedComment) => {
+            setComments((currentComments) => {
+                return [returnedComment, ...currentComments]
+            })
+        }).catch((err) => {
             setIsError(true)
             setComments((currentComments) => {
                 return currentComments.slice(1)
