@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom'
 export default function TopicPage() {
     const { topic } = useParams()
 
-    console.log(useParams())
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
