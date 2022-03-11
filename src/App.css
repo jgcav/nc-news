@@ -167,6 +167,11 @@ h1:hover {
   font-weight: bolder;
 }
 
+.voteErrorMessage {
+  color: rgb(199, 63, 63);
+  font-weight: bolder;
+}
+
 img {
   width: 400px;
   height: 250px;
