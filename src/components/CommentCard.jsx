@@ -8,6 +8,7 @@ export default function CommentCard(comment) {
         <div className="commentCard">
             <dl>
             <dt>{comment.body}</dt>
+            <br />
             <dt className="commentAuthor">{comment.author}</dt>
             </dl>
         </div>
