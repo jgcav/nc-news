@@ -18,14 +18,18 @@ export default function TopicCard({topic}) {
         imgAlt = 'woman smiling and stirring a pot of food'
     }
 
+    const formattedTopic = topic.slug.slice(0, 1).toUpperCase() + topic.slug.slice(1)
+
     return (
         <div>
             <div className="row">
         <div className="column">
             <br />
         <div className="topicCard">
-            <Link className="topicName" to={`/articles/${topic.slug}`} style={{textDecoration: 'none'}}><h4>{topic.slug.toUpperCase()}</h4></Link>
-            <Link className="topicImage" to={`/articles/${topic.slug}`}><img src={imgUrl} alt={imgAlt} /></Link>
+        <Link className="topicImage" to={`/articles/${topic.slug}`}><img src={imgUrl} alt={imgAlt} /></Link>
+            <br />
+            <br />
+            <Link className="topicName" to={`/articles/${topic.slug}`} style={{textDecoration: 'none'}}><h4>{formattedTopic}</h4></Link>
         </div>
         </div>
         </div>
