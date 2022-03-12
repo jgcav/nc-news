@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react'
-import { fetchArticlesById, fetchArticleComments } from '../api'
+import { fetchArticlesById, fetchArticleComments, addComment } from '../api'
 import { useParams } from 'react-router-dom'
 import CommentCard from './CommentCard'
 import ArticleVotes from './ArticleVotes'
@@ -11,6 +11,8 @@ export default function ArticlePage() {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [displayForm, setDisplayForm] = useState(false)
+    const [comment, setComment] = useState('')
+    const [isError, setIsError] = useState(false)
 
     useEffect(() => {
         fetchArticlesById(article_id)
@@ -29,11 +31,35 @@ export default function ArticlePage() {
     }, [article_id])
 
     const showForm = () => {
-        setDisplayForm(!displayForm)
+        setDisplayForm(true)
+    }
+
+    const hideForm = () => {
+        setDisplayForm(false)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const newComment = {username: 'tickle122', body: comment}
+
+        setComment('')
+
+
+        addComment(article_id, newComment).then((returnedComment) => {
+            setComments((currentComments) => {
+                return [returnedComment, ...currentComments]
+            })
+        }).catch((err) => {
+            setIsError(true)
+            setComments((currentComments) => {
+                return currentComments.slice(1)
+            })
+        })
     }
 
     const voteCount = article.votes
     const commentCount = article.comment_count
+
 
     return (
         <div>
@@ -54,10 +80,14 @@ export default function ArticlePage() {
                 <br />
                 <h3>Comments</h3>
                 <br />
-                {displayForm && <form>
-                    <textarea required className="commentField"></textarea>
-                    </form>}
-                <button className="commentButton" onClick={showForm}>Add Comment</button>
+                {isError ? (<p className="errorMessage">Unable to submit comment. Please try again.</p>) : null}
+                <br />
+                {displayForm ? <form onSubmit={handleSubmit}>
+                    <textarea required className="commentField" value={comment} onChange={(e) => setComment(e.target.value)}></textarea>
+                    <br />
+                    <button type="submit" className="submitButton">Submit</button>
+                    <button className="cancelButton" onClick={hideForm} >Cancel</button>
+                    </form> : <button className="commentButton" onClick={showForm}>Add Comment</button>}
                 {comments.map((comment) => {
                     return <CommentCard key={comment.comment_id} {...comment} comments={comments} article_id={article_id}/>
                 })}

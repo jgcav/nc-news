@@ -40,3 +40,10 @@ export const amendVotes = (article_id, vote) => {
   const url = `https://jc-news.herokuapp.com/api/articles/${article_id}`;
     return axios.patch(`${url}`, {inc_votes: vote})
 };
+
+export const addComment = (article_id, newComment) => {
+  const url = `https://jc-news.herokuapp.com/api/articles/${article_id}/comments`;
+    return axios.post(`${url}`, newComment).then((res) => {
+      return res.data.comment
+    })
+};
