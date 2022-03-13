@@ -62,7 +62,7 @@ export default function ArticlePage() {
 
 
     return (
-        <div>
+        <div className="container">
         <div>
         {isLoading ? (<p>Loading...</p>) : (
             <div className="articleContent">

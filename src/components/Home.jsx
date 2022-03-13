@@ -16,7 +16,7 @@ export default function Home() {
     }, [])
 
     return (
-        <div>
+        <div className="container">
             <h3 className="homepage-header">Latest News</h3>
             {isLoading ? (<p>Loading...</p>) : (
                 <div className="articles">

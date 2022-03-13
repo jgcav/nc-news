@@ -7,6 +7,7 @@ import Articles from './components/Articles';
 import Topics from './components/Topics'
 import TopicPage from './components/TopicPage';
 import ArticlePage from './components/ArticlePage';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path = "/articles/:topic" element={<TopicPage />} />
           <Route path = "/article/:article_id" element={<ArticlePage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

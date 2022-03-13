@@ -9,12 +9,15 @@
   background-color: rgb(236, 236, 236);
 }
 
-header {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  padding: 30px 10%;
+header,
+footer {
+  text-align: left;
+  padding: 30px 5%;
   background-color: rgb(199, 63, 63);
+}
+
+footer {
+  text-align: center;
 }
 
 h1 {
@@ -25,21 +28,33 @@ h1:hover {
   color: rgb(212, 212, 212);
 }
 
-.navLinks {
+.navContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+
+.navLinks h2 {
   color: white;
   list-style: none;
   display: inline-block;
-  padding: 0px 20px;
-  font-size: small;
+  padding-right: 20px;
+  font-size: 1.25rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
   text-align: left;
+  line-height: 1.75rem;
 }
 
-.navLinks:hover {
+.navLinks h2:hover {
   color: rgb(212, 212, 212);
+  text-decoration: underline;
+  text-underline-position: unset;
 }
 
 .navBar {
   background-color: rgb(133, 45, 45);
+  padding: 10px 0;
 }
 
 .homepage-header {
@@ -47,14 +62,24 @@ h1:hover {
   margin-top: 10px;
 }
 
+.container {
+  width: 90%;
+  margin: 50px auto;
+}
+
 .articles-header {
   font-size: xx-large;
   margin-top: 10px;
 }
 
-.topics-header {
-  font-size: xx-large;
-  margin-top: 10px;
+.subHeader {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .topics-page-header {
@@ -85,6 +110,14 @@ h1:hover {
   padding: 20px;
 }
 
+.topics {
+  display: flex;
+}
+
+.topic {
+  width: 33.3%;
+}
+
 .topicCard {
   background-color: white;
   text-align: center;
@@ -94,6 +127,14 @@ h1:hover {
 
 .topicCard:hover {
   background-color: rgb(212, 212, 212);
+}
+
+.topicImage img {
+  width: 100%;
+}
+
+.topicName h4 {
+  padding: 20px 0;
 }
 
 .articleTitle {
@@ -209,10 +250,33 @@ img:hover {
   box-shadow: 0, 20px, 8px, 0;
 }
 
+.footerLink {
+  display: inline-block;
+  list-style: none;
+  color: white;
+  padding: 5px 20px;
+}
+
 @media screen and (max-width: 600px) {
+  header {
+    text-align: center;
+  }
+
   .column {
     width: 100%;
     display: block;
     margin-bottom: 20px;
+  }
+
+  .navContainer {
+    justify-content: center;
+  }
+
+  .topics {
+    flex-direction: column;
+  }
+
+  .topic {
+    width: 100%;
   }
 }

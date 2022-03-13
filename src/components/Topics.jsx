@@ -16,8 +16,8 @@ export default function Topics() {
     }, [])
 
     return (
-        <div>
-            <h3 className="topics-header">Topics</h3>
+        <div className="container">
+            <h3 className="subHeader">Topics</h3>
             {isLoading ? (<p>Loading...</p>) : (
             <div className="topics">
                     {topics.map((topic) => {

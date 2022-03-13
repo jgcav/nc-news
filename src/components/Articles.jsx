@@ -16,8 +16,8 @@ export default function Articles() {
     }, [])
 
     return (
-        <div>
-            <h3 className="articles-header">Articles</h3>
+        <div className="container">
+            <h3 className="subHeader">Articles</h3>
             {isLoading ? (<p>Loading...</p>) : (
                 <div className="articles">
                     {articles.map((article) => {
