@@ -1,11 +1,17 @@
 import axios from "axios";
 
 
-export const fetchAllArticles = () => {
+export const fetchAllArticles = (query) => {
   const url = "https://jc-news.herokuapp.com/api/articles";
+    if (query){
+      return axios.get(`${url}${query}`).then((res) => {
+        return res.data
+    });
+  } else {
     return axios.get(`${url}`).then((res) => {
       return res.data
-    });
+    })
+  }
 };
 
 export const fetchAllTopics = () => {
