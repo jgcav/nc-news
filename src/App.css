@@ -257,6 +257,19 @@ img:hover {
   padding: 5px 20px;
 }
 
+.deleteComment {
+  background: rgb(236, 236, 236);
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.deleteComment:hover {
+  background: rgb(212, 212, 212);
+}
+
 @media screen and (max-width: 600px) {
   header {
     text-align: center;
