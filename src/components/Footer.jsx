@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
     return (
         <footer>
-            <Link className="headerLink" to="/" style={{textDecoration: 'none'}}>
             <ul>
                 <Link className="footerLink" to="/articles" style={{textDecoration: 'none'}}>
                     <li>Articles</li>
@@ -13,7 +12,6 @@ export default function Footer() {
                     <li>Topics</li>
                 </Link>
             </ul>
-            </Link>
         </footer>
     )
 }
