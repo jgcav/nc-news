@@ -1,5 +1,7 @@
 # JC-News
 
+## Summary
+
 This project provides a frontend for my backend project which can be viewed at https://github.com/jgcav/BE-NC-News
 
 It is a responsive news website that displays news articles which can be categorised by topic. Users can add and delete comments, vote on articles and sort articles by different criteria such as the date and number of votes.
