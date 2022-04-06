@@ -89,7 +89,7 @@ export default function ArticlePage() {
                     <button className="cancelButton" onClick={hideForm} >Cancel</button>
                     </form> : <button className="commentButton" onClick={showForm}>Add Comment</button>}
                 {comments.map((comment) => {
-                    return <CommentCard key={comment.comment_id} {...comment} comments={comments} article_id={article_id}/>
+                    return <CommentCard key={comment.comment_id} {...comment} comments={comments} setComments={setComments} article_id={article_id}/>
                 })}
             </ol>
             </div>
